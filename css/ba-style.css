@@ -1,0 +1,1438 @@
+@font-face {
+    font-family: 'IcoMoon';
+    src: url('../../../../media/jui/fonts/IcoMoon.eot');
+    src: url('../../../../media/jui/fonts/IcoMoon.eot?#iefix') format('embedded-opentype'),
+    url('../../../../media/jui/fonts/IcoMoon.woff') format('woff'),
+    url('../../../../media/jui/fonts/IcoMoon.ttf') format('truetype'),
+    url('../../../../media/jui/fonts/IcoMoon.svg#IcoMoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import "../../../../media/jui/less/icomoon.less";
+
+/* ========================================================================
+    Shortcode plugin - modal
+ ========================================================================== */
+
+.ba-btn {
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    border: 1px solid #e3e3e3;
+    padding: 10px 15px;
+}
+
+.ba-btn:hover {
+    background-color: #eaeaea;
+}
+
+/* Reset Joomla height 100% */
+.contentpane.component {
+    height: 0;
+}
+
+#modal-filter {
+    margin: 20px 0;
+}
+
+/* Search */
+.modal-shortcode input#filter_search {
+    height: 32px;
+    width: 85%;
+}
+
+/* Button search */
+.modal-shortcode button {
+    margin-left: 5px;
+}
+
+/* Table */
+.forms-table {
+    min-height: 400px;
+    padding-right: 20px;
+}
+
+/* Table list */
+th.form-title {
+    border-left: 4px solid transparent;
+    padding: 15px 20px;
+    text-align: left;
+    width: 100%;
+}
+
+th.form-title:hover a {
+    color: #999;
+    text-decoration: none;
+}
+
+th.form-title:hover {
+    border-left: 4px solid #02adea;
+}
+
+.forms-table tr > th > a {
+    color: #333;
+    font-weight: normal;
+}
+
+/* Form */
+
+.com-baforms .ba-form {
+    margin: 0 auto;
+    transition: height .3s linear;
+    -webkit-transition: height .3s linear;
+}
+
+.com-baforms .ba-form > div,
+.popup-form .ba-form > div {
+    animation: forms-modal .3s .4s linear both;
+    -webkit-animation: forms-modal .3s .4s linear both;
+}
+
+.ba-form {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.ba-form .ba-row {
+    position: inherit;
+}
+
+.com-baforms form {
+    margin: 0 0 18px;
+}
+
+/* Inputs default styles */
+.ba-form textarea {
+    max-width: 100%;
+}
+
+.ba-form input[type="email"],
+.ba-form input[type="text"],
+.ba-form select,
+.ba-form select[size],
+.ba-form textarea {
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: normal !important;
+    padding-left: 20px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.ba-form textarea.ba-alert,
+.ba-form textarea {
+    padding: 20px !important;
+}
+
+.ba-form input:focus,
+.ba-form textarea:focus,
+.ba-form select:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.ba-form input.ba-upload:focus {
+    box-shadow: none!important;
+}
+
+.ba-form select[size] {
+    height: inherit;
+}
+
+.ba-form label {
+    display: block;
+    line-height: initial;
+}
+
+.ba-form div:not(.ba-checkMultiple):not(.ba-radioMultiple ) > label {
+    margin-bottom:15px ;
+}
+
+.ba-form span {
+    display: initial !important;
+}
+
+/* Placeholder */
+.ba-form input::-webkit-input-placeholder {
+    color: inherit;
+}
+
+.ba-form input::-moz-placeholder{
+    color: inherit;
+}
+
+.ba-form textarea::-webkit-input-placeholder {
+    color: inherit;
+}
+
+.ba-form textarea::-moz-placeholder{
+    color: inherit;
+}
+
+.ba-form select::-webkit-input-placeholder {
+    color: inherit;
+}
+
+.ba-form select::-moz-placeholder{
+    color: inherit;
+}
+
+/* jQuery UI styles reset */
+.ba-form .ui-widget * {
+    outline: none !important;
+}
+
+.ba-form .ui-widget-header,
+.ba-form .ui-state-active,
+.ba-form .ui-state-default,
+.ba-form .ui-widget-content,
+.ba-form .ui-widget-header {
+    background: #fff !important;
+    border: none !important;
+}
+
+/* Tooltip */
+.ba-form label span {
+    color: inherit;
+    font: inherit;
+    position: relative;
+}
+
+.ba-form .ba-tooltip {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: rgba(34,34,34,0.95);
+    border-radius: 6px;
+    bottom: inherit;
+    color: rgba(255, 255, 255, .5);
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    left: 0;
+    line-height: 18px;
+    margin-bottom: 10px;
+    max-width: 200px;
+    opacity: 0;
+    padding: 15px;
+    position: fixed;
+    text-align: center;
+    visibility: hidden;
+    -webkit-transition: margin-top .25s ease-out, opacity .25s ease-out;
+    transition: margin-top .25s ease-out, opacity .25s ease-out;
+    -webkit-transform: translateY(-100%) translateX(-50%);
+    transform: translateY(-100%) translateX(-50%);
+}
+
+.ba-form .slider-track + .ba-tooltip {
+    position: absolute;
+    -webkit-transform: translateY(-100%) translateX(0);
+    transform: translateY(-100%) translateX(0);
+}
+
+.ba-form .ba-tooltip:before {
+    content: "";
+    height: 5px;
+    position: absolute;
+    bottom: -15px;
+    left: 50% !important;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-top: 5px solid rgba(34,34,34,0.95);
+}
+
+.ba-form .slider.tool:hover .ba-tooltip,
+.ba-form label > span:hover .ba-tooltip {
+    margin-top: -10px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.ba-form .slider.tool:hover .ba-tooltip {
+    margin-top: -20px;
+}
+
+.ba-form label.ba-btn {
+    position: relative;
+}
+
+/* ========================================================================
+    Tools
+ ========================================================================== */
+
+.ba-form .tool {
+    margin: 20px 0px;
+    text-align: left;
+}
+
+ /* Slider */
+.ba-form .slider.tool .slider.slider-horizontal {
+    width: 100%;
+}
+
+.ba-form .slider {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.ba-form .slider.tool {
+    display: block;
+}
+
+.ba-form .slider-track {
+    cursor: pointer;
+    height: 2px;
+    outline: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.ba-form .condition-area .slider-track {
+    margin-left: 15px;
+    width: -webkit-calc(100% - 30px);
+    width: calc(100% - 30px);
+}
+
+.ba-form .slider-selection {
+    background: #fff;
+    position: absolute;
+}
+
+/* Slider dots */
+.ba-form .slider-handle {
+    border-radius: 10px;
+    cursor: pointer;
+    height: 18px;
+    position: absolute;
+    width: 18px;
+    transition: transform .1s linear, box-shadow .2s linear;
+    -webkit-transition: -webkit-transform .1s linear, box-shadow .2s linear;
+}
+
+.ba-form .slider-handle:active,
+.ba-form .slider-handle:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+
+.ba-form .slider-horizontal .slider-handle +.slider-handle {
+    margin-left: -18px;
+    margin-top: -8px;
+}
+
+.ba-form .slider-horizontal .slider-handle {
+    margin-left: 0;
+    margin-top: -8px;
+}
+
+/* Conditional Logic */
+.ba-dropdown,
+.ba-radioMultiple,
+.ba-radioInline {
+    position: relative;
+}
+
+.condition-area {
+    display: none;
+    overflow: hidden;
+}
+
+.condition-area.selected {
+    -webkit-animation: conditional .6s .3s cubic-bezier(0.2, 1, 0.3, 1) backwards;
+    animation: conditional .6s .3s cubic-bezier(0.2, 1, 0.3, 1) backwards;
+    display: block;
+    visibility: visible;
+}
+
+@keyframes conditional {
+    from{ opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes conditional {
+    from{ opacity: 0;}
+    to {opacity: 1;}
+}
+
+.condition-area.selected .tool:last-child {
+    margin-bottom: 0;
+}
+
+.condition-area.close-condition {
+    display: block;
+    position: absolute;
+    opacity: 1;
+    width: 100%;
+    -webkit-animation: close-condition .6s cubic-bezier(0.2, 1, 0.3, 1) both;
+    animation: close-condition .6s cubic-bezier(0.2, 1, 0.3, 1) both;
+}
+
+@keyframes close-condition {
+    to {opacity: 0;}
+}
+
+@-webkit-keyframes close-condition {
+    to {opacity: 0;}
+}
+
+/* CheckBox and radio inline */
+.ba-form .ba-radioInline > span,
+.ba-form .ba-chekInline div > span {
+    padding-right: 25px;
+}
+
+.ba-form input[type="radio"],
+.ba-form input[type="checkbox"] {
+    display:inline-block;
+    margin: 0 15px 0 0;
+    position: relative;
+}
+
+/* Radio Button*/
+.ba-form .ba-radioInline span span,
+.ba-form .ba-chekInline span span {
+    margin-right: 0;
+}
+
+.ba-form .ba-chekInline div > span,
+.ba-form .ba-checkMultiple div > span ,
+.ba-form .ba-radioMultiple > span,
+.ba-form .ba-radioInline > span ,
+.ba-form .ba-chekInline > span {
+    position: relative;
+    vertical-align: baseline;
+}
+
+.ba-form .ba-checkMultiple span input,
+.ba-form .ba-radioMultiple span input,
+.ba-form .ba-radioInline span input,
+.ba-form .ba-chekInline span input {
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+}
+
+.ba-form input[type="radio"] + span:before {
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #cfd9db;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: 20px;
+}
+
+.ba-form input[type="radio"]:hover + span:before {
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid;
+    content: "";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: 20px;
+}
+
+.ba-form input[type="radio"]:checked + span:after {
+    border-radius: 50%;
+    border: 1px solid;
+    box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,1);
+    content: "";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: 20px;
+}
+
+/* Checkbox */
+.ba-form input[type="checkbox"] + span:before {
+    background: #fff;
+    border-radius: .25em;
+    border: 1px solid #cfd9db;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: 20px;
+}
+
+.ba-form input[type="checkbox"]:hover + span:before {
+    background: #fff;
+    border-radius: .25em;
+    border: 1px solid;
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: 20px;
+}
+
+.ba-form input[type="checkbox"]:checked + span:after {
+    border-radius: .25em;
+    border: 1px solid;
+    box-sizing: border-box;
+    color: #fff;
+    content: '\f26b';
+    display: block;
+    font: normal normal normal 16px/1 'Material-Design-Iconic-Font';
+    height: 20px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    width: 20px;
+}
+
+.ba-form .ba-radioMultiple > span,
+.ba-form .ba-checkMultiple div > span {
+    display: block !important;
+    margin: 15px 0 0 0 ;
+    padding-left: 30px;
+}
+
+.ba-form .ba-radioInline > span > span,
+.ba-form .ba-chekInline div > span > span {
+    padding-right: 30px;
+}
+
+/* Submit button */
+.ba-form .ba-btn-submit:hover,
+input.popup-btn:hover,
+.ba-form .ba-next input[type="button"]:hover,
+.ba-form .ba-prev input[type="button"]:hover {
+    opacity: .8;
+}
+
+.ba-form .ba-btn-submit {
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Total Price */
+.ba-total-price {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Calendar */
+.ba-form .ba-date input[type="text"] {
+    border-radius: 2px;
+    border: 1px solid #f3f3f3;
+    box-shadow: none;
+    cursor: default;
+    cursor: pointer;
+    display: initial;
+    height: 50px;
+}
+
+.ba-form .ba-date.tool .input-append {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.ba-form .ba-date .input-append span {
+    font-size: 13px;
+}
+
+.ba-form .ba-date.tool .input-append .btn {
+    margin-left: -1px;
+}
+
+.ba-form .icon-calendar:before {
+    content: "\43";
+}
+
+.ba-form .ba-date .btn {
+    background-color: #f1f1f1;
+    background-image: none;
+    border-radius: 0 2px 2px 0;
+    border: 1px solid #e3e3e3;
+    box-shadow: none;
+    color: #333;
+    cursor: pointer;
+    height: 50px;
+    padding: 4px 14px;
+    text-shadow: none;
+}
+
+.ba-form .ba-date .btn:hover,
+.ba-form .ba-date .btn:focus {
+    background-color: #e6e6e6;
+    outline: none;
+    text-shadow: none;
+}
+
+.calendar table tfoot {
+    display: none;
+}
+
+.calendar {
+    animation: calendar-open .6s cubic-bezier(.25,.98,.26,.99) both;
+    -webkit-animation: calendar-open .6s cubic-bezier(.25,.98,.26,.99) both;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    left: 50% !important;
+    position: fixed !important;
+    top:5% !important;
+    transform: translateX(-50%);
+    -webkit-transform: -webkit-translateX(-50%);
+    width: 426px !important;
+}
+
+@keyframes calendar-open {
+    0% {top: -500px; opacity: 0;}
+    100% {top: 5%; opacity: 1;}
+}
+
+@-webkit-keyframes calendar-open {
+    0% {top: -500px; opacity: 0;}
+    100% {top: 5%; opacity: 1;}
+}
+
+
+.calendar table {
+    background: #fff !important;
+    border-collapse: separate;
+    border: 1px solid transparent !important;
+    box-shadow: 0 4px 60px rgba(0,0,0,.15);
+    display: block;
+    padding: 0 20px 20px;
+}
+
+.calendar table * {
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+.countdown-options-options .input-append input[type="text"] {
+    width: 272px;
+}
+
+.calendar table .wn,
+.calendar thead .hilite,
+.calendar thead .active {
+    background: transparent !important;
+    border: none !important;
+}
+
+.calendar thead td.title {
+    color: #fff;
+    cursor: default !important;
+    font: 700 18px/72px 'Roboto', Arial, sans-serif;
+    padding: 10px 0;
+}
+
+.calendar thead td.title:after {
+    border: 21px solid ;
+    box-sizing: content-box;
+    content: "";
+    height: 51px;
+    left: 0;
+    position: absolute;
+    top:  0;
+    width: 384px;
+}
+
+.calendar thead tr:first-child td:first-child div {
+    display: none;
+}
+
+.calendar thead tr:first-child td:last-child {
+    position: relative;
+}
+
+.calendar thead tr:first-child td:last-child div {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: -5px;
+    top: 5px;
+}
+
+.calendar thead tr:first-child td:last-child div:hover {
+    opacity: .6;
+}
+
+.calendar .daysrow .day,
+.calendar thead .headrow,
+.calendar .daynames {
+    background: #fff !important;
+    font: 700 16px/36px 'Roboto', Arial, sans-serif;
+    padding: 15px !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.calendar thead .daynames td:not(.wn):hover {
+    color: #999 !important;
+}
+
+.calendar thead .name:not(.wn),
+.calendar .daysrow .day,
+.calendar thead .headrow {
+    cursor: pointer;
+}
+
+.calendar thead .name :hover,
+.calendar .daysrow .day :hover,
+.calendar thead .headrow :hover {
+    color: #999;
+}
+
+.calendar thead .name,
+.calendar .daysrow .day.wn {
+    border: none !important;
+}
+
+.calendar .daysrow .day {
+    background: transparent !important;
+    color: #999;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.calendar .daysrow .day.wn {
+    color: #1a1a1a;
+    font-weight: 700;
+    cursor: default;
+}
+
+.calendar .hilite {
+    padding: 2px !important;
+}
+
+.calendar .daysrow .day.hilite,
+.calendar .daysrow .day.selected {
+    border-radius: 50%;
+    color: #fff;
+}
+
+.calendar .daysrow .day.hilite {
+    background: #eaeaea !important;
+    color: #1a1a1a;
+}
+
+.calendar .combo {
+    border: 1px solid #E3E3E3 !important;
+}
+
+.calendar .combo .label {
+    background: #fff;
+    color: #1a1a1a;
+    font-weight: normal;
+    padding: 5px !important;
+    width: auto;
+}
+
+.calendar .combo .active {
+    background: #fafafa;
+    border: none;
+}
+
+/* Calendar and icon */
+.ba-forms-modal .calendar {
+    position: fixed !important;
+}
+
+/* Address */
+.ba-forms-modal .pac-container {
+    z-index: 1600;
+}
+/* Icons */
+
+.ba-form [class^="icon-"],
+.ba-form [class*=" icon-"] {
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-right: .25em;
+    width: 14px;
+}
+
+.ba-form [class^="icon-"]:before,
+.ba-form [class*=" icon-"]:before {
+    font-family: 'IcoMoon';
+    font-style: normal;
+    speak: none;
+}
+
+/* Input Icon */
+.container-icon {
+    position: relative;
+}
+
+
+.ba-form .container-icon textarea.ba-alert,
+.container-icon textarea,
+.container-icon select,
+.container-icon input {
+    padding-left: 50px !important;
+}
+
+.ba-form .container-icon textarea.ba-alert,
+.container-icon textarea {
+    padding-top: 13px !important;
+}
+
+.icons-cell {
+    display: flex;
+    display:-webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: -webkit-calc(100% - 1px);
+    height: calc(100% - 1px);
+    justify-content: center;
+    -webkit-justify-content: center;
+    left: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 1px;
+    width: 45px;
+}
+
+.icons-cell i {
+    margin: 0 auto;
+}
+
+.container-icon textarea + br + .icons-cell {
+    height: 45px;
+}
+
+/* Page break */
+.ba-form .ba-alert {
+    border: 1px solid #e94b35 !important;
+    padding: inherit;
+    background: transparent;
+    font-weight: inherit;
+}
+
+.ba-form .ba-checkMultiple.ba-alert,
+.ba-form .ba-chekInline.ba-alert,
+.ba-form .ba-radioInline.ba-alert,
+.ba-form .ba-radioMultiple.ba-alert {
+    border: none !important;
+}
+
+.ba-form .ba-alert input[type="checkbox"] + span:before,
+.ba-form .ba-alert input[type="radio"] + span:before {
+    border: 1px solid #e94b35 !important;
+}
+
+.ba-form textarea.ba-alert,
+.ba-form input.ba-alert,
+.ba-form select.ba-alert {
+    padding: 4px 6px 4px 20px;
+}
+
+.ba-form .ba-next {
+    text-align: right;
+}
+
+.ba-form .ba-prev {
+    float: left;
+}
+
+.ba-form .ba-next input[type="button"],
+.ba-form .ba-prev input[type="button"] {
+    border: none;
+}
+
+/* Image */
+.ba-image-backdrop {
+    animation: image-backdrop .3s ease-in-out ;
+    -webkit-animation: image-backdrop .3s ease-in-out ;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1500;
+}
+
+@-webkit-keyframes image-backdrop {
+    from {background-color: rgba(0, 0, 0, 0);}
+}
+
+@keyframes image-backdrop {
+    from {background-color: rgba(0, 0, 0, 0);}
+}
+
+.ba-image-backdrop:hover {
+    cursor:zoom-out;
+}
+
+.ba-lightbox-image img {
+    cursor:zoom-in;
+}
+
+.ba-image-modal {
+    position: absolute;
+}
+
+.ba-image-backdrop.image-lightbox-out {
+    background-color: rgba(0, 0, 0, 0) !important;
+    transition: background-color .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out;
+}
+
+.ba-lightbox-image {
+    overflow: hidden;
+}
+
+.ba-lightbox-image img {
+    transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+    transform: scale(1);
+        -webkit-transform: scale(1);
+}
+
+.ba-lightbox-image img:hover {
+    transform: scale(1.1) translate(4%, 4%);
+        -webkit-transform: scale(1.1) translate(4%, 4%);
+}
+
+/* Send notification */
+
+.ba-form .message {
+    font-style: italic;
+    text-align: center;
+    display: block;
+}
+
+.ba-form .ba-total-price {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* ========================================================================
+    Cart
+ ========================================================================== */
+
+.baforms-cart {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 20px;
+    width: calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+}
+
+.ba-cart-headline {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+/* Layout */
+.baforms-cart .product-cell > * {
+    display: inline-block;
+}
+
+.baforms-cart .product {
+    width: 35%;
+}
+
+.baforms-cart .price,
+.baforms-cart .quantity,
+.baforms-cart .total {
+    width: 20%;
+}
+
+.baforms-cart .quantity input[type="number"] {
+    color: inherit;
+    font-size: inherit;
+    width: 60px;
+}
+
+.baforms-cart .remove-item {
+    width: 5%;
+}
+
+.baforms-cart .remove-item i {
+    cursor: pointer;
+}
+
+/* ========================================================================
+    Popup and buttons
+ ========================================================================== */
+
+/* General styles for popup */
+
+.modal-scrollable.ba-forms-modal {
+    bottom: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    left: 0;
+    overflow-y: scroll;
+    margin-right: -17px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1500;
+}
+
+.ba-modal {
+    display: none;
+}
+
+.ba-modal.in {
+    display: block !important;
+}
+
+.popup-form form {
+    margin: 0;
+}
+
+.popup-form .ba-modal-body {
+    padding: 0;
+    position: relative;
+}
+
+.ba-forms-modal .ba-form {
+    padding: 60px 40px 40px;
+    transition: height .3s linear;
+    -webkit-transition: height .3s linear;
+}
+
+.ba-modal.popup-form {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 5% auto;
+    position: relative;
+    left: 0;
+}
+
+input.popup-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-top {
+    position: fixed;
+    right: 5%;
+    top: 0;
+    z-index: 1000;
+}
+
+/*
+/* Open modal buttons
+*/
+
+.btn-bottom {
+    bottom: 0;
+    position: fixed;
+    right: 5%;
+    z-index: 1000;
+}
+
+.btn-left {
+    left: 0;
+    position: fixed;
+    top: 60%;
+    transform-origin: left top 0;
+    transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+    z-index: 1000;
+}
+
+.btn-right {
+    right: 0;
+    position: fixed;
+    top: 30%;
+    transform-origin: right bottom 0;
+    transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+    z-index: 1000;
+}
+
+/*
+/* Notification modal
+*/
+
+.ba-modal.message-modal {
+    border-radius: 2px;
+    border: transparent;
+    box-shadow: 0 3px 35px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    margin-top: 20vh !important;
+    margin: 0 auto;
+    padding: 65px;
+    width: 500px;
+    z-index: 1600;
+}
+
+/* Icon Close Modal*/
+.ba-forms-modal .ba-modal-close {
+    color: #1a1a1a;
+    font-size: 32px;
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+    top: 20px;
+    z-index: 1;
+}
+
+.ba-modal-close:hover {
+    opacity: .6;
+}
+
+/* Animation Open-Close Modal*/
+.popup-form.in {
+    animation: popup-form .6s cubic-bezier(.25,.98,.26,.99);
+    -webkit-animation: popup-form .6s cubic-bezier(.25,.98,.26,.99);
+}
+
+@keyframes popup-form {
+    0% {
+        -webkit-transform: translateY(100vh);
+        transform: translateY(100vh);
+    }
+    100% {
+        -webkit-transform: translateY(1);
+        transform: translateY(1);
+    }
+}
+
+@-webkit-keyframes popup-form {
+    0% {
+        -webkit-transform: translateY(100vh);
+        transform: translateY(100vh);
+    }
+
+    100% {
+        -webkit-transform: translateY(1);
+        transform: translateY(1);
+    }
+}
+
+.hide-animation .popup-form {
+    animation: hide-popup-form  .25s cubic-bezier(.98,.11,.41,.45) both;
+    -webkit-animation: hide-popup-form .25s cubic-bezier(.98,.11,.41,.45) both;
+}
+
+@-webkit-keyframes hide-popup-form {
+    0% {
+        -webkit-transform: translateY(1);
+        transform: translateY(1);
+    }
+    100% {
+        -webkit-transform: translateY(100vh);
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes hide-popup-form {
+    0% {
+        -webkit-transform: translateY(1);
+        transform: translateY(1);
+    }
+    100% {
+        -webkit-transform: translateY(100vh);
+        transform: translateY(100vh);
+    }
+}
+
+
+.ba-forms-modal .modal-scrollable.ba-forms-modal {
+    animation: forms-modal .5s;
+    -webkit-animation: forms-modal .5s;
+}
+
+@-webkit-keyframes forms-modal {
+    from {opacity: 0;}
+    to {opacity: 1; }
+}
+
+@keyframes forms-modal {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.hide-animation.ba-forms-modal.modal-scrollable {
+    animation: hide-modal  .4s linear both;
+    -webkit-animation: hide-modal .4s linear both;
+}
+
+@-webkit-keyframes hide-modal {
+    from {opacity: 1;}
+    to {opacity: 0; }
+}
+
+@keyframes hide-modal {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/* Massage Modal Animation */
+
+.message-modal.in {
+    animation: message-modal .2s linear both;
+    -webkit-animation: message-modal .2s linear both;
+}
+
+@-webkit-keyframes message-modal {
+    0% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes message-modal {
+    0% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.message-modal.in .message img {
+    display: block;
+    margin: 0 auto;
+}
+
+.message-modal.in .message img.reload-hide {
+    animation: reload-hide .3s linear both;
+    -webkit-animation: reload-hide .3s linear both;
+}
+
+@-webkit-keyframes reload-hide {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes reload-hide {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.message-modal.in .message .message-text {
+    animation: message-text .5s;
+    -webkit-animation: message-text .5s;
+}
+
+@-webkit-keyframes message-text {
+    from {opacity: 0; max-height: 50px; min-height: 50px;}
+    to {opacity: 1; max-height: 350px; min-height: 0; }
+}
+
+@keyframes message-text {
+    from {opacity: 0; max-height: 50px; min-height: 50px;}
+    to {opacity: 1; max-height: 350px; min-height: 0;}
+}
+
+
+/* ========================================================================
+    Start Responsive
+ ========================================================================== */
+
+@media (max-width: 1200px) {
+
+    /* Submit button */
+    .ba-btn-submit {
+        width: 100% !important;
+    }
+
+    /* Next & Prev button*/
+    .ba-next input,
+    .ba-prev {
+        width: 45% !important;
+    }
+
+    .ba-prev input {
+        width: 100% !important;
+    }
+
+    /* Modal */
+    .ba-modal.message-modal,
+    .ba-modal.popup-form {
+        width: 90% !important;
+    }
+    
+    .popup-form .modal-body {
+        max-height: 400px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Inline  radio & chekbox */
+    .ba-form .ba-radioInline > span,
+    .ba-form .ba-chekInline div > span {
+        display: block !important;
+        line-height: 36px;
+    }
+
+    .com-baforms .ba-form {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 320px) {
+    /* Calendar */
+    .ba-date .input-append input {
+        width: calc(100% - 44px);
+        width: -webkit-calc(100% - 44px);
+    }
+}
+
+/* ========================================================================
+    Reset Bootstrap 2 spans to original styles
+ ========================================================================== */
+
+ /* Bootstrap dialog */
+
+.fade.in {
+    opacity: 1;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    -moz-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+
+.modal.fade {
+    -webkit-transition: opacity .3s linear, top .3s ease-out;
+    -moz-transition: opacity .3s linear, top .3s ease-out;
+    -o-transition: opacity .3s linear, top .3s ease-out;
+    transition: opacity .3s linear, top .3s ease-out;
+}
+
+@media (min-width: 1200px) {
+ 
+    .ba-form .row-fluid [class*="span"] {
+        margin-left: 2.564102564102564%;
+    }
+
+    .ba-form .row-fluid [class*="span"]:first-child {
+        margin-left: 0;
+    }
+
+    .ba-form .row-fluid:before, .row-fluid:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+
+    .ba-form .row-fluid:after {
+        clear: both;
+    }
+
+    [class*="span"] {
+        float: left;
+    }
+
+    /* Bootstrap Grid */
+
+    .ba-form .row-fluid .span12 {
+        width: 100%;
+    }
+
+    .ba-form .row-fluid .span11 {
+        width: 91.45299145299145%;
+    }
+
+    .ba-form .row-fluid .span10 {
+        width: 82.90598290598291%;
+    }
+
+    .ba-form .row-fluid .span9 {
+        width: 74.35897435897436%;
+    }
+
+    .ba-form .row-fluid .span8 {
+        width: 65.81196581196582%;
+    }
+
+    .ba-form .row-fluid .span7 {
+        width: 57.26495726495726%;
+    }
+
+    .ba-form .row-fluid .span6 {
+        width: 48.717948717948715%;
+    }
+
+    .ba-form .row-fluid .span5 {
+        width: 40.17094017094017%;
+    }
+
+    .ba-form .row-fluid .span4 {
+        width: 31.623931623931625%;
+    }
+
+    .ba-form .row-fluid .span3 {
+        width: 23.076923076923077%;
+    }
+
+    .ba-form .row-fluid .span2 {
+        width: 14.52991452991453%;
+    }
+
+    .ba-form .row-fluid .span1 {
+        width: 5.982905982905983%;
+    }
+}

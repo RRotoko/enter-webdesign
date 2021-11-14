@@ -1,0 +1,74 @@
+@charset "utf-8";
+body, code, dl, dd, form, pre {
+margin: 0;
+}
+a:link, a:visited, ins {
+text-decoration: none;
+}
+a:visited {
+color: #bc9b70;
+}
+a:hover {
+text-decoration: underline;
+}
+a:link img, a:visited img, object, fieldset, abbr, acronym {
+border: none;
+}
+
+abbr, acronym {
+cursor: help;
+border-bottom: 1px dotted #999;
+}
+address, cite, dfn {
+font-style: normal;
+}
+code, pre {
+white-space: pre-wrap;
+}
+img {
+vertical-align: bottom;
+}
+input, select, button {
+overflow: visible;
+vertical-align: middle;
+}
+legend {
+color: #000;
+margin: 0 0 -2px;
+padding: 0;
+}
+li {
+list-style: none;
+}
+optgroup option {
+padding-left: 22px;
+}
+
+address, blockquote, h1, h2, h3, h4, h5, h6, fieldset, ol, ul {
+margin: 0;
+padding: 0;
+}
+th, h1, h2, h3, h4, h5, h6 {
+font-weight: normal;
+}
+q {
+quotes: "\00ab" "\00bb" "\201e" "\201c";
+}
+q:after {
+content: "\00bb";
+}
+q:before {
+content: "\00ab";
+}
+q > q:after {
+content: "\201c";
+}
+q > q:before {
+content: "\201e";
+}
+input, button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+a {outline: none;}
