@@ -10,67 +10,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="robots" content="index, follow" />
   <meta name="author" content="EWD">
+   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/icon.png" />
+
   <link rel="stylesheet" href="css/reset.css">
+
   <link rel="stylesheet" href="css/style.css">
+
   <link rel="stylesheet" href="css/style-responsive.css">  
+
   <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!--Theme Styles CSS-->
   <link rel="apple-touch-icon" href="touch-device.png">
 </head>
 <body>
+  <!-- Preloader -->
 <div class="preloader" id="preloader">
     <div class="item">
       <div class="spinner">
       </div>
     </div>
 </div>
+<!-- Main Menu -->
 <div class="opacity-nav">
         <div class="menu-index first" id="buttons">
         <i class="fa  fa-close"></i>
         </div>
     <ul class="menu-fullscreen">
-      <li><a class="ajax-link" href="http://127.0.0.1:5500/indes.html">Úvod</a></li>
-      <li><a class="ajax-link" href="http://127.0.0.1:5500/index2.html">Reference</a></li>
-      <li><a class="ajax-link" href="http://127.0.0.1:5500/index6.html">Web design</a></li>
-      <li><a class="ajax-link" href="http://127.0.0.1:5500/index7.html">Cenik</a></li>
+      <li><a class="ajax-link" href="indes.html">Úvod</a></li>
+      <li><a class="ajax-link" href="index2.html">Reference</a></li>
+      <li><a class="ajax-link" href="index6.html">Web design</a></li>
+      <li><a class="ajax-link" href="index7.html">Cenik</a></li>
     </ul>
 </div>
+<!-- Top Header_Area -->
   <header id="fullscreen">
-      <div class="logo" id="full"><a class="ajax-link" href="http://127.0.0.1:5500/indes.html">ENTER WEB DESIGN</a></div>
+      <div class="logo" id="full"><a class="ajax-link" href="indes.html">ENTER WEB DESIGN</a></div>
         <div class="menu-index" id="button">
         <i class="fa fa-bars"></i>
         </div>
   </header>
+  <!-- End Top Header_Area -->
+
+
   <div class="clear"></div>
+  <!-- Content -->
   <div class="content" id="ajax-content">
         <div class="text-intro">
           <h1>Kontakt</h1>
-               <br/>  <br/>    
+               <br/>  <br/>   
+               <!-- Quar --> 
           <div class="one-column">
             <p><img class="width100" src="/img/kontakt-qr-code.svg" alt="studio tvorby webových stránek - kontakt"></p>
             <p>Using the quar code you can call us</p>
           </div>
+          <!-- Firma -->
           <div class="two-column">
-		  			<div class="gkLogo">
-                    <a><img src="img/logo_2.png" alt="EWD"></a> 
-</div><br/><br/>
 		  <p><img class="flag2" src="/img/czech.png" alt="FABER VISUM kontakt"> Česko</p>
-		  <p><i class="fa fa-home"></i> Luční 30, Brno 61600
-</p>
+		  <p><i class="fa fa-home"></i> Luční 30, Brno 61600</p>
 		  <p><i class="fa fa-phone"></i> <a href="tel:+42(077)%20803%2033%2045">+42(077) 803 33 45</a></p>
 		  <p><i class="fa fa-envelope"></i>  <a href="mailto:INFO@EWD.COM" >INFO@EWD.COM</a></p>
-          </div>          
-        <div class="clear"></div>
-         <br/><br/>
-          
+          </div>  
+          <!-- Map -->
+          <div class="contact_map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.2112430675256!2d16.56980911592386!3d49.21552078344768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4712941e447f9c1b%3A0xb32ca7ffc158bd33!2zTHXEjW7DrSAyNTU3LzMwLCA2MTYgMDAgQnJuby3FvWFib3bFmWVza3k!5e0!3m2!1sru!2scz!4v1638103927896!5m2!1sru!2scz" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <!-- End Map -->
         </div>
-
-
   </div>
+<!-- Content-End -->
 
 
-
-
+<!-- Sidebar -->
 <div id="ajax-sidebar">
   <div class="home-sidebar slider" id="hero">
     <div class="parallax-option" data-jkit="[parallax:strength=0.8;axis=both]">
@@ -81,7 +92,7 @@
     </div>
   </div>
 </div>
-
+<!-- Sidebar-End -->
 
   <footer id="ajax-footer">
     <div class="footer-margin"> 
@@ -92,41 +103,31 @@
   </footer>
   <script src="https://kit.fontawesome.com/491aaad027.js" crossorigin="anonymous"></script>
 
+
+  <!-- Map JS -->
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="vendors/map/topbuilder_map.min.js"></script>
+  <!-- Bootstrap JS -->
   <script src="js/jquery.min.js"></script>
+  <!-- jQuery JS -->
 	<script src="js/jquery.easing.min.js"></script>
-	<script src="js/modernizr.custom.42534.js" type="text/javascript"></script>
+  <!-- WaitForImages -->
   <script src="js/jquery.waitforimages.js" type="text/javascript"></script>
+  <!-- jKit -->
+  <script src="js/jquery.jkit.1.2.16.min.js"></script>
+
+  <script src="js/modernizr.custom.42534.js" type="text/javascript"></script>
   <script src="js/typed.js" type="text/javascript"></script>
   <script src="js/masonry.pkgd.min.js" type="text/javascript"></script>  
-  <script src="js/imagesloaded.pkgd.min.js" type="text/javascript"></script>    
-  <script src="js/jquery.jkit.1.2.16.min.js"></script>
+  <!-- ImagesLoaded -->
+  <script src="js/imagesloaded.pkgd.min.js" type="text/javascript"></script> 
+  <!-- Main JS -->  
   <script src="js/script.js" type="text/javascript"></script>
+
 	<script>
     $('#button, #buttons').on('click', function() {
       $( ".opacity-nav" ).fadeToggle( "slow", "linear" );
     });
   </script>
-  <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "INTERSAT",
-  "description": "Tvorba webových stránek",
-  "url": "https://intersat.cz",
-  "logo": "https://intersat.cz/tvorba-webovych-stranek.png",
-  "sameAs": [
-    "https://www.facebook.com/intersat.cz",
-    "http://twitter.com/Intersatdesign",
-    "https://goo.gl/gzF1EM"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+420776339348",
-    "contactType": "Customer service",
-	"contactOption" : "skype:intersatservis",
-	"areaServed" : "CZ"
-  }
-}
-</script>
 </body>
 </html>
