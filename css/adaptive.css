@@ -1,0 +1,23 @@
+/* Max Large Devices, Wide Screens*/
+@media only screen and (mad-width: 1500px) {
+
+}
+/*Large Devices, Wide Screens*/
+@media only screen and (mad-width: 1200px) {
+   
+}
+/*Medium Devices, Desktop*/
+@media only screen and (mad-width: 992px) {
+    
+/*Small Devices, Tablets*/
+@media only screen and (mad-width: 768px) {
+    /* */
+}
+/*Extra Small Devices, Phones*/
+@media only screen and (mad-width: 480px) {
+    /* */
+}
+/*Custom, iPhone Retina */
+@media only screen and (mad-width: 320px) {
+     /* */
+}
